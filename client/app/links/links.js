@@ -3,10 +3,10 @@ angular.module('shortly.links', [])
 .controller('LinksController', function ($scope, Links, Auth, $location) {
   // Your code here
 
-  if (!Auth.isAuth()) {
-    console.log('NOT LOGGED IN');
-    $location.path('/signin');
-  }
+  // if (!Auth.isAuth()) {
+  //   console.log('NOT LOGGED IN');
+  //   $location.path('/signin');
+  // }
 
   $scope.data = Links.getAll()
   .then(function(response) {

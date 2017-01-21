@@ -10,9 +10,10 @@
     <a ng-click='signOut()' class='logout'>Logout</a>
   </div>
 
+  <input ng-model='search' class='search' type='text' name='url'>
   
-  
-  <div class='link' ng-repeat='link in data.links'>
+  <!-- <div class='link' ng-repeat="link in data.links | searchFor: 'searchString' | orderBy: '-visits'"> -->
+  <div class='link' ng-repeat="link in data.links | filter:search | orderBy: '-visits'">
     <img src='/assets/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{link.visits}}</span></div>
     <div class='title'>{{link.title}}</div>
