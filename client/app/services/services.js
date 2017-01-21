@@ -19,6 +19,7 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function(response) {
+      console.log('RESPONSE FROM ADDONE IN SERVICES=============>', response);
       return response;
     });
 
