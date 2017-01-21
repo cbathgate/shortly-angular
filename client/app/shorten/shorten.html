@@ -1,8 +1,20 @@
 <div id='container'>
+
+  <div class='navigation'>
+    <ul>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+    </ul>
+
+    <a ng-click='signOut()' class='logout'>Logout</a>
+  </div>
+
+
   <div nav></div>
-  <form>
-      <input ng-model='link.url' class='text' type='text' name='url'>
+  <form name='shorten'>
+      <input type = 'url' ng-model='link.url' class='text' type='text' name='url'>
       <input ng-click='addLink()' type='submit' value='Shorten' >
+      <span class = 'error' ng-show='shorten.url.$error.url'>Please input a valid link with http://</span>
   </form>
 <!-- Your code here -->
 </div>

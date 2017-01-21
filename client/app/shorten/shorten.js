@@ -1,6 +1,6 @@
-angular.module('shortly.shorten', ['shortly.nav'])
+angular.module('shortly.shorten', [])
 
-.controller('ShortenController', function ($scope, $location, Links) {
+.controller('ShortenController', function ($scope, $location, Links, Auth) {
   $scope.link = {};
 
   $scope.addLink = function() {
@@ -11,4 +11,6 @@ angular.module('shortly.shorten', ['shortly.nav'])
       return response;
     });
   };
+
+  $scope.signOut = Auth.signout;
 });
