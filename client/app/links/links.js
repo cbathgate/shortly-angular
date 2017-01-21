@@ -5,5 +5,9 @@ angular.module('shortly.links', [])
   $scope.data = Links.getAll()
   .then(function(response) {
     $scope.data.links = response;
+  }, function errorCallback(response) {
+    return response;
   });
+
+
 });
